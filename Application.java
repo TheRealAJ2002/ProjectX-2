@@ -99,12 +99,17 @@ public class Application {
         System.out.print("Enter password: ");
         String password = scanner.next();
 
+    if (password.length() >= 12){
         if (accountManager.createAccount(username, password)) {
             System.out.println("Account created successfully!");
         } else {
             System.out.println("Username already exists.");
         }
     }
+    else {
+        System.out.println("Password requires atleast 12 charachters.");
+    }
+}
 
     private void displayMenu() {
         System.out.println("\nMenu:");
