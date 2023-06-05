@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ProjectX-2.iml" filepath="$PROJECT_DIR$/.idea/ProjectX-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ProjectX-2-Login-GUI-Alexander.iml" filepath="$PROJECT_DIR$/.idea/ProjectX-2-Login-GUI-Alexander.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProjectX-2-Login-GUI-Alexander/demo4/demo4.iml" filepath="$PROJECT_DIR$/ProjectX-2-Login-GUI-Alexander/demo4/demo4.iml" />
     </modules>
   </component>
 </project>
