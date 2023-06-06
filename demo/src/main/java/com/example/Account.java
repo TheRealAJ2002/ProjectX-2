@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example;
 
 public class Account {
     private String username;

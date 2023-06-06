@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,7 +53,7 @@ public class Login {
 
             if (loginSuccessful) {
                 wrongLogin.setText("Success!");
-                m.changeScene("afterLogin.fxml");
+                m.changeScene("Chat.fxml");
             } else {
                 wrongLogin.setText("Wrong username or password");
             }
