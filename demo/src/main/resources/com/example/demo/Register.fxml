@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.Register">
+   <children>
+      <Label layoutX="219.0" layoutY="24.0" text="Register">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="118.0" text="Username:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="151.0" layoutY="138.0" prefHeight="26.0" prefWidth="298.0" />
+      <Label layoutX="151.0" layoutY="176.0" text="Password:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="151.0" layoutY="235.0" text="Confirm Password:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="register" layoutX="152.0" layoutY="307.0" mnemonicParsing="false" onAction="#userRegister" text="Register" />
+      <PasswordField fx:id="password" layoutX="152.0" layoutY="200.0" prefHeight="26.0" prefWidth="298.0" />
+      <PasswordField fx:id="confirmPassword" layoutX="150.0" layoutY="255.0" prefHeight="26.0" prefWidth="298.0" />
+      <Label fx:id="registerMsg" layoutX="151.0" layoutY="99.0" prefHeight="18.0" prefWidth="279.0" textFill="RED">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="150.0" layoutY="339.0" mnemonicParsing="false" onAction="#closePage" prefHeight="26.0" prefWidth="62.0" text="Close" />
+   </children>
+</AnchorPane>
