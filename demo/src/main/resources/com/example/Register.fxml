@@ -34,13 +34,13 @@
       <Button fx:id="register" layoutX="151.0" layoutY="339.0" mnemonicParsing="false" onAction="#userRegister" text="Register" />
       <PasswordField fx:id="password" layoutX="153.0" layoutY="248.0" prefHeight="26.0" prefWidth="298.0" />
       <PasswordField fx:id="confirmPassword" layoutX="151.0" layoutY="303.0" prefHeight="26.0" prefWidth="298.0" />
-      <Label fx:id="registerMsg" layoutX="214.0" layoutY="90.0" prefHeight="18.0" prefWidth="279.0" textFill="RED">
+      <Label fx:id="registerMsg" layoutX="127.0" layoutY="142.0" prefHeight="18.0" prefWidth="347.0" textFill="RED">
          <font>
             <Font size="10.0" />
          </font>
       </Label>
-      <Text layoutX="214.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Password safety requirements:" />
-      <Text layoutX="214.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- has 12 or more charachters" wrappingWidth="163.734375" />
-      <Text layoutX="214.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- contains 1 or more numbers" wrappingWidth="163.734375" />
+      <Text layoutX="206.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Password safety requirements:" />
+      <Text layoutX="206.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- has 12 or more charachters" wrappingWidth="163.734375" />
+      <Text layoutX="206.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- contains 1 or more numbers" wrappingWidth="163.734375" />
    </children>
 </AnchorPane>

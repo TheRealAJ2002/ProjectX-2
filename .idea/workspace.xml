@@ -5,24 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f58f658-8a4f-48e3-bac7-d0a233a72dd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_console_standalone_1_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/Test/RegisterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/test/java/com/example/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/Register.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/resources/com/example/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/com/example/Register.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/com/example/ChatController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/demo/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
