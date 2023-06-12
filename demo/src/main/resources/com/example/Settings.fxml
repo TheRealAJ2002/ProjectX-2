@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.SettingsController">
+    <children>
+        <Label text="Instellingen" />
+        <ComboBox fx:id="languageDropdown" />
+        <ToggleButton fx:id="themeToggle" text="Toggle Theme" />
+        <Button fx:id="backButton" text="Terug" onAction="#goBack" />
+    </children>
+</VBox>

@@ -27,7 +27,10 @@ public class ChatController {
     @FXML TabPane activeChats;
     @FXML TextField vragenBox;
     @FXML VBox geschiedenis;
-
+    @FXML
+    private void openSettings() throws IOException {
+        Main.changeScene("Settings.fxml");
+    }
     @FXML
     private void newGesprek() {
         Label label = new Label("Nieuw gesprek");

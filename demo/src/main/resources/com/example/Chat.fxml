@@ -29,11 +29,13 @@
             </TitledPane>
             <Accordion />
             <Region prefHeight="35.0" prefWidth="119.0" VBox.vgrow="ALWAYS" />
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Gebruiker">
+            <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Instellingen" onAction="#openSettings">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
+
+
          </children>
       </VBox>
    </left>

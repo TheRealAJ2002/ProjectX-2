@@ -12,7 +12,6 @@ public class Main extends Application {
 
     private static Stage stg;
 
-
     @Override
     public void start(Stage stage) throws IOException {
         stg = stage;
@@ -26,8 +25,8 @@ public class Main extends Application {
         stage.show();
     }
 
-    public void changeScene(String fxml) throws IOException {
-        Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+    public static void changeScene(String fxml) throws IOException {
+        Parent pane = FXMLLoader.load(Main.class.getResource(fxml));
         stg.getScene().setRoot(pane);
     }
 
