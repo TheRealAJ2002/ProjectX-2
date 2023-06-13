@@ -16,6 +16,11 @@ public class SettingsController {
     private ToggleButton themeToggle;
 
     @FXML
+    private void navEditUser() throws IOException {
+        Main.changeScene("EditUser.fxml");
+    }
+
+    @FXML
     private void initialize() {
         languageDropdown.getItems().addAll("Nederlands", "Engels", "Duits");
 
