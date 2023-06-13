@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.EditUser">
+   <children>
+      <Text layoutX="105.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit username/password">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text layoutX="116.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="usernameEdit" layoutX="190.0" layoutY="113.0" prefHeight="26.0" prefWidth="266.0" />
+      <Text layoutX="137.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="118.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="135.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="67.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="confirm password:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Label fx:id="wrongEdit" layoutX="115.0" layoutY="79.0" prefHeight="18.0" prefWidth="370.0" textFill="RED" />
+      <Button fx:id="cancelButton" layoutX="309.0" layoutY="310.0" mnemonicParsing="false" onAction="#cancel" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="saveButton" layoutX="229.0" layoutY="310.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="30.0" prefWidth="61.0" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <PasswordField fx:id="passwordEdit" layoutX="190.0" layoutY="213.0" prefHeight="26.0" prefWidth="266.0" />
+      <PasswordField fx:id="confirmPasswordEdit" layoutX="190.0" layoutY="255.0" prefHeight="26.0" prefWidth="266.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,5 @@
+.root {
+    -fx-base: black;
+    -fx-background: black;
+    -fx-text-fill: white;
+}
