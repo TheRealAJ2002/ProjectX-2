@@ -16,4 +16,10 @@ public class AccountManager {
     public static void addAccount(Account account) {
         accounts.add(account);
     }
+
+    public boolean accountExists(String username, AccountManager accountManager) {
+        return accountManager.getAccounts().stream()
+                .anyMatch(account -> account.getUsername().equals(username));
+    }
+
 }
