@@ -71,6 +71,6 @@ public class EditUser {
     @FXML
     private void cancel() throws IOException {
         // Optionally, navigate back to the chat interface or another page
-        Main.changeScene("Chat.fxml");
+        Main.changeScene("SettingsController.fxml");
     }
 }
