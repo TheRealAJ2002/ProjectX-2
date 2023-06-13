@@ -16,6 +16,8 @@ public class Register {
     @FXML
     private TextField username;
 
+    @FXML Button cancelButton;
+
     @FXML
     private PasswordField password;
 
@@ -87,6 +89,12 @@ public boolean isValidUsername(String username) {
                 .anyMatch(account -> account.getUsername().equals(username));
 
         return !usernameExists && isValidUsername(username) && isValidPassword(password, confirmedPassword);
+    }
+
+    @FXML
+    private void navBack(ActionEvent event) throws IOException {
+        Main m = new Main();
+        m.changeScene("Login.fxml");
     }
 
 

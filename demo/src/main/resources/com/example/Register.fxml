@@ -42,5 +42,6 @@
       <Text layoutX="206.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="* Password safety requirements:" />
       <Text layoutX="206.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- has 12 or more charachters" wrappingWidth="163.734375" />
       <Text layoutX="206.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- contains 1 or more numbers" wrappingWidth="163.734375" />
+      <Button fx:id="CancelButton" layoutX="229.0" layoutY="339.0" mnemonicParsing="false" onAction="#navBack" text="Cancel" />
    </children>
 </AnchorPane>
