@@ -27,10 +27,7 @@ public class ChatController {
     @FXML TabPane activeChats;
     @FXML TextField vragenBox;
     @FXML VBox geschiedenis;
-    @FXML
-    private void openSettings() throws IOException {
-        Main.changeScene("Settings.fxml");
-    }
+
     @FXML
     private void newGesprek() {
         Label label = new Label("Nieuw gesprek");
@@ -97,6 +94,15 @@ public class ChatController {
     }
 
     @FXML
+    Button deleteAllButton;
+    @FXML
+    private void deleteAllChats() {
+        activeChats.getTabs().clear();
+        geschiedenis.getChildren().clear();
+    }
+
+
+    @FXML
     private void stelVraag() {
         vragenBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -114,4 +120,21 @@ public class ChatController {
             }
         });
     }
+
+
+
+
+
+
+    @FXML
+    private void initialize() {
+        deleteAllButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                deleteAllChats();
+            }
+        });
+    }
+
+    
 }
