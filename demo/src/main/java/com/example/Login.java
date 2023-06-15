@@ -9,6 +9,8 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+import static com.example.Main.loggedInAccount;
+
 public class Login {
 
     public Login(){
@@ -47,18 +49,22 @@ public class Login {
             wrongLogin.setText("Please enter your data.");
         } else {
             // Check if the entered username and password match any account in the AccountManager
-            boolean loginSuccessful = AccountManager.getAccounts().stream()
-                    .anyMatch(account -> account.getUsername().equals(enteredUsername)
-                            && account.getPassword().equals(enteredPassword));
+            Account loggedInAccount = AccountManager.getAccounts().stream()
+                    .filter(account -> account.getUsername().equals(enteredUsername)
+                            && account.getPassword().equals(enteredPassword))
+                    .findFirst()
+                    .orElse(null);
 
-            if (loginSuccessful) {
+            if (loggedInAccount != null) {
                 wrongLogin.setText("Success!");
+                Main.setLoggedInAccount(loggedInAccount); // Update the loggedInAccount field in Main
                 m.changeScene("Chat.fxml");
             } else {
                 wrongLogin.setText("Wrong username or password");
             }
         }
     }
+
 
 
 

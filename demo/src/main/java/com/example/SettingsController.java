@@ -26,6 +26,11 @@ public class SettingsController {
 
 
     @FXML
+    private void navEditUser() throws IOException {
+        Main.changeScene("EditUser.fxml");
+    }
+
+    @FXML
     private void initialize() {
         Settings settings = new Settings();
         languageDropdown.setItems(languageOptions);

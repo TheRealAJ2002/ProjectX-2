@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ChatController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ChatController">
    <left>
       <VBox fx:id="ChatBar" prefHeight="400.0" prefWidth="119.0" BorderPane.alignment="CENTER">
          <children>
@@ -19,6 +19,9 @@
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
+
+
+
             <TitledPane animated="false" text="Geschiedenis">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
@@ -27,15 +30,30 @@
                   <VBox fx:id="geschiedenis" prefHeight="200.0" prefWidth="100.0" />
                </content>
             </TitledPane>
-            <Accordion />
-            <Region prefHeight="35.0" prefWidth="119.0" VBox.vgrow="ALWAYS" />
-            <Button fx:id="settingsButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" text="Instellingen" onAction="#openSettings">
+
+
+
+
+            <!-- 添加"删除所有对话"按钮 -->
+            <Button fx:id="deleteAllButton" mnemonicParsing="false" onAction="#deleteAllChats" text="Log verwijderen">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                  <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
 
 
+
+
+
+
+
+            <Accordion />
+            <Region prefHeight="35.0" prefWidth="119.0" VBox.vgrow="ALWAYS" />
+            <Button fx:id="SettingsButton" mnemonicParsing="false" onAction="#openSettings" prefHeight="25.0" prefWidth="108.0" text="Settings">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
          </children>
       </VBox>
    </left>

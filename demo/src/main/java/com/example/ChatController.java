@@ -25,6 +25,7 @@ import javafx.scene.text.Text;
 
 public class ChatController {
 
+
     public void setSelectedLanguage(String selectedLanguage) {
         Settings.setSelectedLanguage(selectedLanguage);
     }
@@ -35,6 +36,12 @@ public class ChatController {
     TextField vragenBox;
     @FXML
     VBox geschiedenis;
+
+
+    @FXML Button SettingsButton;
+
+
+
 
     @FXML
     private void openSettings() throws IOException {
@@ -109,6 +116,15 @@ public class ChatController {
     }
 
     @FXML
+    Button deleteAllButton;
+    @FXML
+    private void deleteAllChats() {
+        activeChats.getTabs().clear();
+        geschiedenis.getChildren().clear();
+    }
+
+
+    @FXML
     private void stelVraag() {
         vragenBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
@@ -131,6 +147,7 @@ public class ChatController {
             }
         });
     }
+
 
     private String generateResponse(String question) {
         String language = Settings.getSelectedLanguage();
@@ -155,4 +172,24 @@ public class ChatController {
 
         return response;
     }
+    @FXML
+    private void initialize() {
+        deleteAllButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                deleteAllChats();
+            }
+        });
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
