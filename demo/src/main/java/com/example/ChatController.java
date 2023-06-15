@@ -24,7 +24,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
 public class ChatController {
-
+    private Gesprek actiefGesprek;
 
     @FXML Button SettingsButton;
     @FXML TabPane activeChats;
@@ -39,6 +39,8 @@ public class ChatController {
     private void newGesprek() {
         Label label = new Label("Nieuw gesprek");
         Tab newTab = new Tab();
+        Gesprek nGesprek = new Gesprek(Main.loggedInAccount, label.getText());
+        actiefGesprek = nGesprek;
 
         newTab.setGraphic(label);
         newTab.setClosable(true);
@@ -67,6 +69,9 @@ public class ChatController {
         label.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
+                if(event.getClickCount() == 1) {
+                    actiefGesprek = nGesprek;
+                }
                 if(event.getClickCount() == 2) {
                     textField.setText(label.getText());
                     newTab.setGraphic(textField);
@@ -91,6 +96,7 @@ public class ChatController {
                 Boolean oldValue, Boolean newValue) {  
               if (! newValue) {  
                 label.setText(textField.getText());  
+                nGesprek.setTitel(textField.getText());
                 newTab.setGraphic(label);            
               }
             }
@@ -106,6 +112,7 @@ public class ChatController {
     private void deleteAllChats() {
         activeChats.getTabs().clear();
         geschiedenis.getChildren().clear();
+        Main.loggedInAccount.deleteAllGesprekken();
     }
 
 
@@ -121,7 +128,10 @@ public class ChatController {
 
                     Tab current = activeChats.getSelectionModel().getSelectedItem();
                     VBox content = (VBox) current.getContent();
-                    content.getChildren().add(new Text(vragenBox.getText()));
+                    actiefGesprek.addVraag(vragenBox.getText());
+                    content.getChildren().add(new Text(actiefGesprek.getRecenteVraag()));
+                    String antwoord = actiefGesprek.maakAntwoord(vragenBox.getText());
+                    content.getChildren().add(new Text(actiefGesprek.getRecenteAntwoord()));
                     vragenBox.clear();
                 }
             }
