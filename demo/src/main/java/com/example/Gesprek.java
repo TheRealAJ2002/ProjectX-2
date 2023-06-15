@@ -23,12 +23,20 @@ public class Gesprek implements Observable {
         return titel;
     }
 
+    public ArrayList<String> getVragen() {
+        return input;
+    }
+
+    public ArrayList<String> getAntwoorden() {
+        return output;
+    }
+
     public void addVraag(String vraag) {
         input.add(vraag);
     }
 
     public String maakAntwoord(String vraag) {
-        String antwoord = "Hier is een antwoord op je vraag: " + vraag;
+        String antwoord = generateAntwoord(vraag);
         output.add(antwoord);
         return antwoord;
     }
@@ -42,11 +50,20 @@ public class Gesprek implements Observable {
     }
 
     public void update() {
+        output.clear();
         for(String vraag: input) {
-
+            output.add(generateAntwoord(vraag));
         }
-        for(String antwoord: output) {
+    }
 
+    private String generateAntwoord(String input) {
+        switch (Settings.getSelectedLanguage()) {
+            case "English": return "The answer on your question in English: " + input;
+
+            case "Dutch": return "Het antwoord op je vraag in het Nederlands: " + input;
+
+            case "German": return "Die Antwort auf Ihre Frage auf Deutsch: " + input;
         }
+        return "No language selected";
     }
 }

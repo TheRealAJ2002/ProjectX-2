@@ -42,6 +42,7 @@ public class SettingsController {
             // Get the selected language
             String selectedLanguage = languageDropdown.getValue();
             settings.setSelectedLanguage(selectedLanguage);
+            Main.loggedInAccount.updateGesprekken();
         });
 
         themeToggle.setOnAction(event -> {

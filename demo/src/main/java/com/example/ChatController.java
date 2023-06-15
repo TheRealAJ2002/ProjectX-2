@@ -48,7 +48,57 @@ public class ChatController {
         Main.changeScene("Settings.fxml");
     }
 
+    private void loadGesprek(Gesprek uGesprek) {
+        Label label = new Label(uGesprek.getTitel());
+        actiefGesprek = uGesprek;
+        Tab newTab = new Tab();
 
+        newTab.setGraphic(label);
+        newTab.setClosable(true);
+        TextField textField = new TextField();
+        newTab.setOnCloseRequest(new EventHandler<Event>() {
+            @Override
+            public void handle(Event event) {
+                closeGesprek(newTab);
+            }
+        });
+
+        label.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                clickGesprek(event, uGesprek, textField, newTab, label);
+            }
+        });
+
+        textField.setOnAction(new EventHandler<ActionEvent>() {  
+            @Override  
+            public void handle(ActionEvent event) {  
+              label.setText(textField.getText());  
+              newTab.setGraphic(label);  
+            }  
+          });
+
+          textField.focusedProperty().addListener(new ChangeListener<Boolean>() {  
+            @Override  
+            public void changed(ObservableValue<? extends Boolean> observable,  
+                Boolean oldValue, Boolean newValue) {  
+              if (! newValue) {  
+                label.setText(textField.getText());  
+                uGesprek.setTitel(textField.getText());
+                newTab.setGraphic(label);            
+              }
+            }
+        });
+
+        VBox chat = new VBox();
+        for(int i = 0; i < uGesprek.getVragen().size(); i++) {
+            chat.getChildren().add(new Text(uGesprek.getVragen().get(i)));
+            chat.getChildren().add(new Text(uGesprek.getAntwoorden().get(i)));
+        }
+
+        newTab.setContent(chat);
+        activeChats.getTabs().add(newTab);
+    }
 
     @FXML
     private void newGesprek() {
@@ -64,35 +114,14 @@ public class ChatController {
         newTab.setOnCloseRequest(new EventHandler<Event>() {
             @Override
             public void handle(Event event) {
-                HBox hGeschiedenis = new HBox();
-                hGeschiedenis.getChildren().add(newTab.getGraphic());
-                hGeschiedenis.getChildren().get(0).setOnMouseClicked(new EventHandler<MouseEvent>() {
-                    @Override
-                    public void handle(MouseEvent event) {
-                        if (event.getClickCount() == 2) {
-                            if (!activeChats.getTabs().contains(newTab)) {
-                                activeChats.getTabs().add(newTab);
-                            }
-                        }
-                    }
-                });
-
-                geschiedenis.getChildren().add(hGeschiedenis);
+                closeGesprek(newTab);
             }
         });
 
         label.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent event) {
-                if(event.getClickCount() == 1) {
-                    actiefGesprek = nGesprek;
-                }
-                if(event.getClickCount() == 2) {
-                    textField.setText(label.getText());
-                    newTab.setGraphic(textField);
-                    textField.selectAll();
-                    textField.requestFocus();
-                }
+                clickGesprek(event, nGesprek, textField, newTab, label);
             }
         });
 
@@ -153,30 +182,35 @@ public class ChatController {
         });
     }
 
+    private void closeGesprek(Tab newTab) {
+        HBox hGeschiedenis = new HBox();
+                hGeschiedenis.getChildren().add(newTab.getGraphic());
+                hGeschiedenis.getChildren().get(0).setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        if (event.getClickCount() == 2) {
+                            if (!activeChats.getTabs().contains(newTab)) {
+                                activeChats.getTabs().add(newTab);
+                            }
+                        }
+                    }
+                });
 
-    private String generateResponse(String question) {
-        String language = Settings.getSelectedLanguage();
-        String response = "";
-
-        // Add logic to generate the response based on the question and selected language
-        // Here's an example that returns a hardcoded response based on the language
-        switch (language) {
-            case "English":
-                response = "English response.";
-                break;
-            case "Dutch":
-                response = "Nederlandse reactie.";
-                break;
-            case "German":
-                response = "Deutsche Antwort.";
-                break;
-            default:
-                response = "Unsupported language.";
-                break;
-        }
-
-        return response;
+                geschiedenis.getChildren().add(hGeschiedenis);
     }
+
+    private void clickGesprek(MouseEvent event, Gesprek nGesprek, TextField textField, Tab newTab, Label label) {
+        if(event.getClickCount() == 1) {
+                    actiefGesprek = nGesprek;
+                }
+                if(event.getClickCount() == 2) {
+                    textField.setText(label.getText());
+                    newTab.setGraphic(textField);
+                    textField.selectAll();
+                    textField.requestFocus();
+                }
+    }
+
     @FXML
     private void initialize() {
         deleteAllButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -185,6 +219,10 @@ public class ChatController {
                 deleteAllChats();
             }
         });
+
+        for(Gesprek gesprek: Main.loggedInAccount.getGesprekken()) {
+            loadGesprek(gesprek);
+        }
     }
 
 
