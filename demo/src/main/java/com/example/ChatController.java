@@ -26,15 +26,30 @@ import javafx.scene.text.Text;
 public class ChatController {
     private Gesprek actiefGesprek;
 
+    public void setSelectedLanguage(String selectedLanguage) {
+        Settings.setSelectedLanguage(selectedLanguage);
+    }
+
+    @FXML
+    TabPane activeChats;
+    @FXML
+    TextField vragenBox;
+    @FXML
+    VBox geschiedenis;
+
+
     @FXML Button SettingsButton;
-    @FXML TabPane activeChats;
-    @FXML TextField vragenBox;
-    @FXML VBox geschiedenis;
+
+
+
 
     @FXML
     private void openSettings() throws IOException {
         Main.changeScene("Settings.fxml");
     }
+
+
+
     @FXML
     private void newGesprek() {
         Label label = new Label("Nieuw gesprek");
@@ -54,8 +69,8 @@ public class ChatController {
                 hGeschiedenis.getChildren().get(0).setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
                     public void handle(MouseEvent event) {
-                        if(event.getClickCount() == 2) {
-                            if(!activeChats.getTabs().contains(newTab)) {
+                        if (event.getClickCount() == 2) {
+                            if (!activeChats.getTabs().contains(newTab)) {
                                 activeChats.getTabs().add(newTab);
                             }
                         }
@@ -100,7 +115,7 @@ public class ChatController {
                 newTab.setGraphic(label);            
               }
             }
-          });
+        });
 
         newTab.setContent(new VBox());
         activeChats.getTabs().add(newTab);
@@ -121,8 +136,8 @@ public class ChatController {
         vragenBox.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-                if(event.getCode().equals(KeyCode.ENTER)) {
-                    if(activeChats.getSelectionModel().getSelectedItem() == null) {
+                if (event.getCode().equals(KeyCode.ENTER)) {
+                    if (activeChats.getSelectionModel().getSelectedItem() == null) {
                         newGesprek();
                     }
 
@@ -139,10 +154,29 @@ public class ChatController {
     }
 
 
+    private String generateResponse(String question) {
+        String language = Settings.getSelectedLanguage();
+        String response = "";
 
+        // Add logic to generate the response based on the question and selected language
+        // Here's an example that returns a hardcoded response based on the language
+        switch (language) {
+            case "English":
+                response = "English response.";
+                break;
+            case "Dutch":
+                response = "Nederlandse reactie.";
+                break;
+            case "German":
+                response = "Deutsche Antwort.";
+                break;
+            default:
+                response = "Unsupported language.";
+                break;
+        }
 
-
-
+        return response;
+    }
     @FXML
     private void initialize() {
         deleteAllButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -153,5 +187,14 @@ public class ChatController {
         });
     }
 
-    
+
 }
+
+
+
+
+
+
+
+
+
