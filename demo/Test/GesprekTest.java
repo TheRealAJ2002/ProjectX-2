@@ -1,5 +1,7 @@
 import com.example.Account;
 import com.example.Gesprek;
+import com.example.Settings;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -34,5 +36,32 @@ public class GesprekTest {
     public void testDeleteGesprekGeschiedenis() {
         testAccount.deleteAllGesprekken();
         Assertions.assertTrue(testAccount.getGesprekken().isEmpty());
+    }
+
+    @Test
+    public void testNederlandsAntwoord() {
+        Settings.setSelectedLanguage("Dutch");
+        String vraag = "vraag";
+        String expectedAntwoord = "Het antwoord op je vraag in het Nederlands: vraag";
+
+        Assertions.assertEquals(expectedAntwoord, nieuwGesprek.maakAntwoord(vraag));
+    }
+
+    @Test
+    public void testEngelsAntwoord() {
+        Settings.setSelectedLanguage("English");
+        String vraag = "vraag";
+        String expectedAntwoord = "The answer on your question in English: vraag";
+
+        Assertions.assertEquals(expectedAntwoord, nieuwGesprek.maakAntwoord(vraag));
+    }
+
+    @Test
+    public void testDuitsAntwoord() {
+        Settings.setSelectedLanguage("German");
+        String vraag = "vraag";
+        String expectedAntwoord = "Die Antwort auf Ihre Frage auf Deutsch: vraag";
+
+        Assertions.assertEquals(expectedAntwoord, nieuwGesprek.maakAntwoord(vraag));
     }
 }
